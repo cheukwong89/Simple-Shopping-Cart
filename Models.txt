@@ -1,0 +1,5 @@
+Models:
+Products.jsp(shopping items, including UI design, posting form)
+ShoppingCart.jsp(edit, delete, changing quantities)
+Login.jsp(Connected to database, checking user authentification-->userid and password)
+WishList(view, delete, add to cart, products saved to database with a relationship of user id)
