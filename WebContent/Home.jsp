@@ -59,7 +59,7 @@
 				<li><a href="index2.html">My Account</a>|</li>
 				<li><a href="index2.html">Contacts</a></li>
 			</ul><br /><br />
-			<p>Copyright &copy;. All rights reserved. Design by NeiXiang Group</p>					                                                                                                                                                                                                          <div class="inner_copy"><a href="http://smashinghub.com/10-best-free-website-platforms-for-creating-online-portfolio-in-2015.htm">0 best free website platforms for creating online portfolio</a></div>																																																						
+			<p>Copyright &copy;. All rights reserved. Designed by NeiXiang Group</p>					                                                                                                                                                                                                          <div class="inner_copy"><a href="http://smashinghub.com/10-best-free-website-platforms-for-creating-online-portfolio-in-2015.htm">0 best free website platforms for creating online portfolio</a></div>																																																						
 		</div>
 	</div>
     <map name="Map">
