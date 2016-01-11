@@ -36,13 +36,11 @@ public class databaseTag extends TagSupport{
 		if(pid==null){
 			String query="select * from Product";
 			stmt=conn.createStatement();
-			System.out.println("11");
 			rs=stmt.executeQuery(query);
-			System.out.println("22");
 			while(rs.next()){
 				out.println("<div class='item'>");
 				out.println("<img src="+rs.getString(4)+" alt='' width='202' height='173' /><br />");
-				out.println("<span>$"+rs.getDouble(3)+"</span><a href='index2.jsp?pid="+rs.getString(1)+"' class='view'>View</a><a href='#' class='buy'>Add to cart</a>");
+				out.println("<span>$"+rs.getDouble(3)+"</span><a href='index2.jsp?pid="+rs.getString(1)+"' class='view'>View</a><a href='CartServlet?pid="+rs.getString(1)+"action="+"add"+"' class='buy'>Add to cart</a>");
 				out.println("</div>");	
 			}
 			
