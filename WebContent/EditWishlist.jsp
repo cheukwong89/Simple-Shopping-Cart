@@ -36,7 +36,7 @@
 	else{
 		out.println("<h3><a href='EditWishlist.jsp'>Edit your List</a></h3>");
 	while(rset.next()){
-		out.println("<h4>"+rset.getString(2)+"</h4><br />");
+		out.println("<hr><h4>"+rset.getString(2)+"</h4><br />");
 		out.println("<div class='big_view'>");
 		out.println("<img src='"+rset.getString(4)+"' alt='' width='311' height='319' /><br />");
 		out.println("<span>$"+rset.getDouble(3)+"</span>");
