@@ -1,7 +1,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Login</title>
+<title>register</title>
 <link href="style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
@@ -18,21 +18,22 @@
 	</div>
 <%
     String msg =""; 
-    String msg2 = (String)request.getAttribute("errmsg");
+    String msg2 = (String)request.getAttribute("regerrmsg");
     if(msg2 != null)
     {
     	msg = msg2;
     }    
 %>
-<div id = "form" align = "center">
+<div id = "reg" align = "center">
 <h2><font color="red"> <%= msg %>  </font></h2>
 
-  <form action="Loggedin.jsp" method="post">
+  <form action="newaccount.jsp" method="post">
     
-  	<br> Enter Username : <input type="text" name="username">
-  	<br> Enter Password : <input type="password" name="password">
-    <br> New customer? <a href = register.jsp>Register now!</a>
-    <br> <input type="submit" value="Login">
+  	<br> Enter Username : <input type="text" name="regusername">
+  	<br> Enter Password : <input type="text" name="regpassword">
+  	<br> Confirm Password : <input type="text" name="regpassword2">
+     
+    <br> <input type="submit" value="Register">
   </form>
   </div>
 

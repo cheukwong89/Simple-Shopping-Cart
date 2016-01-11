@@ -4,6 +4,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<link rel="stylesheet" type="text/css" href="style.css">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Amazon</title>
 <link href="css/style.css" rel="stylesheet" type="text/css">
@@ -14,8 +15,8 @@
 			<img src="http://www.dazhuoge.me/wp-content/uploads/2016/01/headerpic.png"/>
 			<ul id="menu">
 				<li><a href="Home.jsp" class="but1_active">Home Page</a></li>
-				<li><a href="Login.jsp" class="but1_active">Hello, Your account</a></li>
-				<li><a href="WishList.jsp" class="but1_active">Your Lists</a></li>
+				<li><a href="youraccount.jsp" class="but1_active">Hello, Your account</a></li>
+				<li><a href="WishlistServlet" class="but1_active">Your Lists</a></li>
 				<li><a href="shoppingcart.jsp" class="but1_active">Cart</a></li>
 			</ul>
 		</div>

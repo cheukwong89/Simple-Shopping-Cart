@@ -45,11 +45,11 @@ public class WishList extends TagSupport{
 			Connection conn =  ConnectionManager.getMysqlConnection();
 			JspWriter out=pageContext.getOut();
 //			rset = executeSQL(pid, conn);
-			String insertQ = "insert into Wishlist (userid, pid) values(?,?)";
-			ps = conn.prepareStatement(insertQ);
-			ps.setString(1, userid);
-			ps.setString(2, pid);
-			ps.execute();
+//			String insertQ = "insert into Wishlist (userid, pid) values(?,?)";
+//			ps = conn.prepareStatement(insertQ);
+//			ps.setString(1, userid);
+//			ps.setString(2, pid);
+//			ps.execute();
 
 			String query="select * from Product where pid in (select pid from Wishlist where userid=?)";
 			ps=conn.prepareStatement(query);
@@ -60,6 +60,7 @@ public class WishList extends TagSupport{
 				out.println("<div class='big_view'>");
 				out.println("<img src='"+rset.getString(4)+"' alt='' width='311' height='319' /><br />");
 				out.println("<span>$"+rset.getDouble(3)+"</span>");
+				out.println("<span><input type='submit'>");
 				out.println("</div>");	
 			}
 		}catch(Exception e){

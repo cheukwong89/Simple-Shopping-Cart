@@ -13,9 +13,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Loggedin</title>
+
 </head>
-<body bgcolor="66BB99">
+<body>
 
    <h2>
    <%
@@ -29,7 +30,9 @@
    	  Statement sm = con.createStatement();
    	  ResultSet rs=sm.executeQuery("select * from User where username='"+username+"'"+"and upassword='"+password+"'");
    	  if(rs.next()){ 
-   		  session.setAttribute("userid", rs.getString(1));   		  
+   		  session.setAttribute("userid", rs.getString(1));
+   		  RequestDispatcher dispatch = request.getRequestDispatcher("youraccount.jsp") ;
+		  dispatch.forward(request, response);
       }
    	  else{
    	      request.setAttribute("errmsg", "Invalid username or password! Try again.");
@@ -37,17 +40,13 @@
           RequestDispatcher dispatch = request.getRequestDispatcher("Login.jsp") ;
   		  dispatch.forward(request, response);
       }
+     
    
    %>
    
    
-   <br> Welcome, <% out.println(session.getAttribute("username")); %>
-   
-
-   <br><a href="WishList.jsp">View wishlist</a>
-   <br><a href="logout.jsp">Logout</a>
-   
    
 </h2>
+
 </body>
 </html>

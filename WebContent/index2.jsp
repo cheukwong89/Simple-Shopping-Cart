@@ -6,6 +6,7 @@
 <html>
 <head>
 <title>Amazon</title>
+<link rel="stylesheet" type="text/css" href="style.css">
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 <link href="css/style.css" rel="stylesheet" type="text/css">
 </head>
@@ -16,8 +17,8 @@
 			<img src="http://www.dazhuoge.me/wp-content/uploads/2016/01/headerpic.png">
 			<ul id="menu">
 				<li><a href="Home.jsp" class="but1_active">Home Page</a></li>
-				<li><a href="Login.jsp" class="but1_active">Hello, Your account</a></li>
-				<li><a href="Wishlist.jsp" class="but1_active">Your Lists</a></li>
+				<li><a href="youraccount.jsp" class="but1_active">Hello, Your account</a></li>
+				<li><a href="WishlistServlet" class="but1_active">Your Lists</a></li>
 				<li><a href="shoppingcart.jsp" class="but1_active">Cart</a></li>
 			</ul>
 		</div>
@@ -37,8 +38,12 @@
 				</ul>
 			</div>
 			<div id="main_block">
+
 				<div id="item">
-					<% String pid=request.getParameter("pid"); %>
+					<% 
+						String pid=request.getParameter("pid"); 
+						session.setAttribute("pid", pid);	
+					%>
 					<d:database pid="<%=pid %>"/> 
 				</div>	
 				<div id="item">
@@ -51,10 +56,12 @@
 					%>
 					</select>
 					<br><input type="submit" value="Add To Cart" onclick="window.location.href='shoppingcart.jsp'">
-					<br><input type="submit" value="Add To Lists" onclick="window.location.href='WishList.jsp?pid=<%=pid%>'">
-				</div>	
+					<form action="WishlistServlet" method="post"><br><input type="submit" value="Add To Lists" onclick="addtoWish(<%=pid%>)"></form>	
+				</div>
+
 			</div>
 		</div>
+		
 	</div>
 	<div id="footer">
 		<div id="footer_inside">
