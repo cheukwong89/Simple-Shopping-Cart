@@ -38,7 +38,7 @@ public class databaseTag extends TagSupport{
 				while(rs.next()){
 					out.println("<div class='item'>");
 					out.println("<img src="+rs.getString(4)+" alt='' width='202' height='173' /><br />");
-					out.println("<span>$"+rs.getDouble(3)+"</span><a href='index2.jsp?pid="+rs.getString(1)+"' class='view'>View</a><a href='shoppingcart.jsp?pid="+rs.getString(1)+"' class='buy'>Add to cart</a>");
+					out.println("<span>$"+rs.getDouble(3)+"</span><a href='index2.jsp?pid="+rs.getString(1)+"' class='view'>View</a><a href='CartServlet?id="+rs.getString(1)+"&num=1&action=add' class='buy'>Add to cart</a>");
 					out.println("</div>");	
 				}
 			
