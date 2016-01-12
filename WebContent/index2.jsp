@@ -10,7 +10,11 @@
 <link href="css/style.css" rel="stylesheet" type="text/css">
  <script language="javascript" type="text/javascript">
 					function gotoCart(id){
+<<<<<<< HEAD
 						window.location.href="CartServlet?pid="+id+"&qty="+document.getElementById("productDetail").value;
+=======
+						window.location.href="CartServlet?id="+id+"&action=add&num="+document.getElementById("productDetail").value;
+>>>>>>> 049a91166bcc669e3f66de16ea82e33a4a51e2cc
 					}
 				</script>
 </head>
@@ -22,7 +26,15 @@
 				<li><a href="Home.jsp" class="but1_active">Home Page</a></li>
 				<li><a href="youraccount.jsp" class="but1_active">Hello, Your account</a></li>
 				<li><a href="WishlistServlet" class="but1_active">Your Lists</a></li>
+<<<<<<< HEAD
 				<li><a href="cart.jsp" class="but1_active">Cart</a></li>
+=======
+				<li><a href="CartServlet?action=show" class="but1_active">Cart</a></li>
+			<!--  
+				<li><a href="login.jsp" class="but1_active">Hello, Your account</a></li>
+				<li><a href="list.jsp" class="but1_active">Your Lists</a></li>
+				<li><a href="cart.jsp" class="but1_active">Cart</a></li> -->
+>>>>>>> 049a91166bcc669e3f66de16ea82e33a4a51e2cc
 			</ul>
 		</div>
 	</div>
@@ -53,6 +65,11 @@
 						}	
 					%>
 					</select>
+<!--
+					<br><input type="submit" value="Add To Cart" onclick="window.location.href='CartServlet?id=<%=pid%>&action=add&num=1'">
+					<br><input type="submit" value="Add To Lists" onclick="window.location.href='WishlistServlet?pid=<%=pid%>'">	
+				</div> -->
+
 					<br><input type="button" value="Add To Cart" onclick="javascript:gotoCart(<%=pid %>)" style="width:150px" >
 					<br><input type="submit" value="Add To Lists" onclick="window.location.href='WishlistServlet?pid=<%=pid%>" style="width:150px" >
 				</div>	
@@ -74,7 +91,7 @@
 		</div>
 	</div>
     <map name="Map">
-       <area shape="rect" coords="78,45,312,119" href="index.html">
+       <area shape="rect" coords="78,45 247890-,312,119" href="index.html">
        <area shape="poly" coords="670,87,719,78,727,123,677,130" href="#">
        <area shape="poly" coords="776,124,818,152,793,189,751,160" href="#">
        <area shape="poly" coords="834,52,885,61,878,105,828,96" href="#">

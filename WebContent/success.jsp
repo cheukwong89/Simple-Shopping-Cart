@@ -9,9 +9,9 @@
 <body>
 <hr>
 <%
-	String id = request.getParameter("pid");
-	String num = request.getParameter("qty");
+	String id = request.getParameter("id");
+	//String num = request.getParameter("qty");
 %>
-You have added <%=id %> into your cart.
+You have added Product(Id: <%=id %>) into your cart.
 </body>
 </html>
