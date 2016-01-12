@@ -6,7 +6,7 @@
 <html>
 <head>
 <title>Amazon</title>
-<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 <link href="css/style.css" rel="stylesheet" type="text/css">
 </head>
@@ -19,7 +19,7 @@
 				<li><a href="Home.jsp" class="but1_active">Home Page</a></li>
 				<li><a href="youraccount.jsp" class="but1_active">Hello, Your account</a></li>
 				<li><a href="WishlistServlet" class="but1_active">Your Lists</a></li>
-				<li><a href="shoppingcart.jsp" class="but1_active">Cart</a></li>
+				<li><a href="CartServlet?action=show" class="but1_active">Cart</a></li>
 			</ul>
 		</div>
 	</div>
@@ -41,8 +41,7 @@
 
 				<div id="item">
 					<% 
-						String pid=request.getParameter("pid"); 
-						session.setAttribute("pid", pid);	
+						String pid=request.getParameter("pid"); 	
 					%>
 					<d:database pid="<%=pid %>"/> 
 				</div>	
@@ -55,8 +54,8 @@
 						}	
 					%>
 					</select>
-					<br><input type="submit" value="Add To Cart" onclick="window.location.href='shoppingcart.jsp'">
-					<form action="WishlistServlet" method="post"><br><input type="submit" value="Add To Lists" onclick="addtoWish(<%=pid%>)"></form>	
+					<br><input type="submit" value="Add To Cart" onclick="window.location.href='CartServlet?id=<%=pid%>&action=add&num=1'">
+					<br><input type="submit" value="Add To Lists" onclick="window.location.href='WishlistServlet?pid=<%=pid%>'">	
 				</div>
 
 			</div>

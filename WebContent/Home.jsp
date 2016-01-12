@@ -17,7 +17,7 @@
 				<li><a href="Home.jsp" class="but1_active">Home Page</a></li>
 				<li><a href="youraccount.jsp" class="but1_active">Hello, Your account</a></li>
 				<li><a href="WishlistServlet" class="but1_active">Your Lists</a></li>
-				<li><a href="shoppingcart.jsp" class="but1_active">Cart</a></li>
+				<li><a href="CarServlet" class="but1_active">Cart</a></li>
 			</ul>
 		</div>
 	</div>

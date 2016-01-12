@@ -48,7 +48,7 @@ public class WishlistServlet extends HttpServlet {
 		PreparedStatement ps;
 		ResultSet rset = null;
 		WishlistBean wb = new WishlistBean();
-		String pid = (String)request.getSession().getAttribute("pid");
+		String pid = request.getParameter("pid");
 		String userid = (String)request.getSession().getAttribute("userid");
 		String dpid = request.getParameter("productid");
 		String action = request.getParameter("action");

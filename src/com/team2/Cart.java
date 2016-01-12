@@ -68,24 +68,4 @@ public class Cart {
 	    this.setTotalPrice(sum); 
 	    return this.getTotalPrice();
 	}
-	
-	public static void main(String[] args) {
-		
-		Product i1 = new Product(1,"AAA",200,500);
-		Product i2 = new Product(2,"BBB",300,500);
-		Product i3 = new Product(1,"AAA",200,500);
-		
-		Cart c = new Cart();
-		c.addItemsInCart(i1, 1);
-		c.addItemsInCart(i2, 2);
-		c.addItemsInCart(i3, 3);
-		Set<Map.Entry<Product, Integer>> items= c.getItems().entrySet();
-		for(Map.Entry<Product, Integer> obj:items)
-		{
-			System.out.println(obj);
-		}
-		System.out.println("TotalPrice: "+c.getTotalPrice());
-	}
-
-	
 }
