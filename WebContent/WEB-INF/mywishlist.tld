@@ -16,6 +16,18 @@
 <tag>
 <name>mywishlist</name>
 <tag-class>com.team2.WishList</tag-class>
+<attribute>
+	<name> pid</name>
+	<required>false</required>
+	<rtexprvalue>true</rtexprvalue>
+	
+</attribute>
+<attribute>
+	<name> userid</name>
+	<required>true</required>
+	<rtexprvalue>true</rtexprvalue>
+	
+</attribute>
 </tag>
 
 </taglib>

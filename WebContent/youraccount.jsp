@@ -14,7 +14,7 @@
 			<ul id="menu">
 				<li><a href="Home.jsp" class="but1_active">Home Page</a></li>
 				<li><a href="youraccount.jsp" class="but1_active">Hello, Your account</a></li>
-				<li><a href="WishList.jsp" class="but1_active">Your Lists</a></li>
+				<li><a href="WishlistServlet" class="but1_active">Your Lists</a></li>
 				<li><a href="shoppingcart.jsp" class="but1_active">Cart</a></li>
 			</ul>
 		</div>
@@ -30,7 +30,7 @@ if (session.getAttribute("username")==null){
    <br> Welcome, <% out.println(session.getAttribute("username")); %>
    
 
-   <br><a href="wish.jsp">View wishlist</a>
+   <br><a href="WishlistServlet">View wishlist</a>
    <br><a href="logout.jsp">Logout</a>
    </h2>
 

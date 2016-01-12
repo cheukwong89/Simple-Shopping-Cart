@@ -20,12 +20,10 @@
 
    <h2>
    <%
-
       String regusername = request.getParameter("regusername");
    	  String regpassword = request.getParameter("regpassword");
    	  String regpassword2 = request.getParameter("regpassword2");
    	  
-
    	  if(regpassword.equals(regpassword2)){
    	  	Class.forName("com.mysql.jdbc.Driver");
    	  	Connection con2 = DriverManager.getConnection("jdbc:mysql://172.99.96.76/956744_marlabs","956744_root","Marlabs12java");
@@ -45,7 +43,6 @@
    	  		request.setAttribute("errmsg", "Successfully registered!");
 		  	RequestDispatcher dispatch = request.getRequestDispatcher("Login.jsp") ;
 	  		dispatch.forward(request, response);
-
       	}
    	  }
    	  else

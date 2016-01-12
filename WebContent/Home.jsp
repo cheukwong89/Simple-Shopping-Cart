@@ -11,12 +11,12 @@
 <body>
 <div id="header">																																																																								
 		<div id="header_inside">
-			<img src="http://www.dazhuoge.me/wp-content/uploads/2016/01/headerpic.png"/>
+			<img src="http://www.dazhuoge.me/wp-content/uploads/2016/01/headerpic.png" alt="setalpm" width="999" height="222" border="0" usemap="#Map" /><br />																																										
 			<ul id="menu">
 				<li><a href="Home.jsp" class="but1_active">Home Page</a></li>
-				<li><a href="Login.jsp" class="but1_active">Hello, Your account</a></li>
-				<li><a href="WishList.jsp" class="but1_active">Your Lists</a></li>
-				<li><a href="shoppingcart.jsp" class="but1_active">Cart</a></li>
+				<li><a href="login.jsp" class="but1_active">Hello, Your account</a></li>
+				<li><a href="list.jsp" class="but1_active">Your Lists</a></li>
+				<li><a href="cart.jsp" class="but1_active">Cart</a></li>
 			</ul>
 		</div>
 	</div>
@@ -31,7 +31,7 @@
 					<li><a href="Home.jsp?brand=La%20Isla">La Isla</a></li>
 					<li class="color"><a href="Home.jsp?brand=Glamorise">Glamorise</a></li>
 					<li><a href="Home.jsp?brand=Fruit%20of%20the%20Loom">Fruit of the Loom</a></li>
-					<li class="color"><a href="Home.jsp">All</a></li>
+					<li class="color"><a href="Home.jsp?brand=all">All</a></li>
 				</ul>
 			</div>
 			<div id="main_block">
@@ -42,8 +42,9 @@
 				<div id="items">
 				<%! String brands; %>
 				<% if(request.getParameter("brand")!=null){
-					brands=request.getParameter("brand");
-					}%>
+					brands=request.getParameter("brand");	
+					}
+					%>
 				<d:database brand="<%=brands%>"/>
 				</div>
 			</div>
