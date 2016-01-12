@@ -4,7 +4,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="style.css">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Amazon</title>
 <link href="css/style.css" rel="stylesheet" type="text/css">
@@ -12,12 +11,12 @@
 <body>
 <div id="header">																																																																								
 		<div id="header_inside">
-			<img src="http://www.dazhuoge.me/wp-content/uploads/2016/01/headerpic.png"/>
+			<img src="http://www.dazhuoge.me/wp-content/uploads/2016/01/headerpic.png" alt="setalpm" width="999" height="222" border="0" usemap="#Map" /><br />																																										
 			<ul id="menu">
 				<li><a href="Home.jsp" class="but1_active">Home Page</a></li>
-				<li><a href="youraccount.jsp" class="but1_active">Hello, Your account</a></li>
-				<li><a href="WishlistServlet" class="but1_active">Your Lists</a></li>
-				<li><a href="CarServlet" class="but1_active">Cart</a></li>
+				<li><a href="login.jsp" class="but1_active">Hello, Your account</a></li>
+				<li><a href="list.jsp" class="but1_active">Your Lists</a></li>
+				<li><a href="cart.jsp" class="but1_active">Cart</a></li>
 			</ul>
 		</div>
 	</div>
@@ -32,7 +31,7 @@
 					<li><a href="Home.jsp?brand=La%20Isla">La Isla</a></li>
 					<li class="color"><a href="Home.jsp?brand=Glamorise">Glamorise</a></li>
 					<li><a href="Home.jsp?brand=Fruit%20of%20the%20Loom">Fruit of the Loom</a></li>
-					<li class="color"><a href="Home.jsp">All</a></li>
+					<li class="color"><a href="Home.jsp?brand=all">All</a></li>
 				</ul>
 			</div>
 			<div id="main_block">
@@ -43,8 +42,9 @@
 				<div id="items">
 				<%! String brands; %>
 				<% if(request.getParameter("brand")!=null){
-					brands=request.getParameter("brand");
-					}%>
+					brands=request.getParameter("brand");	
+					}
+					%>
 				<d:database brand="<%=brands%>"/>
 				</div>
 			</div>
@@ -60,7 +60,7 @@
 				<li><a href="index2.html">My Account</a>|</li>
 				<li><a href="index2.html">Contacts</a></li>
 			</ul><br /><br />
-			<p>Copyright &copy;. All rights reserved. Designed by NeiXiang Group</p>					                                                                                                                                                                                                          <div class="inner_copy"><a href="http://smashinghub.com/10-best-free-website-platforms-for-creating-online-portfolio-in-2015.htm">0 best free website platforms for creating online portfolio</a></div>																																																						
+			<p>Copyright &copy;. All rights reserved. Design by NeiXiang Group</p>					                                                                                                                                                                                                          <div class="inner_copy"><a href="http://smashinghub.com/10-best-free-website-platforms-for-creating-online-portfolio-in-2015.htm">0 best free website platforms for creating online portfolio</a></div>																																																						
 		</div>
 	</div>
     <map name="Map">
