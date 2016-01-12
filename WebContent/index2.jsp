@@ -10,7 +10,7 @@
 <link href="css/style.css" rel="stylesheet" type="text/css">
  <script language="javascript" type="text/javascript">
 					function gotoCart(id){
-						window.location.href="wishlist?pid="+id+"&qty="+document.getElementById("productDetail").value;
+						window.location.href="CartServlet?pid="+id+"&qty="+document.getElementById("productDetail").value;
 					}
 				</script>
 </head>
@@ -20,8 +20,8 @@
 			<img src="http://www.dazhuoge.me/wp-content/uploads/2016/01/headerpic.png" alt="setalpm" width="999" height="222" border="0" usemap="#Map" /><br />																																										
 			<ul id="menu">
 				<li><a href="Home.jsp" class="but1_active">Home Page</a></li>
-				<li><a href="login.jsp" class="but1_active">Hello, Your account</a></li>
-				<li><a href="list.jsp" class="but1_active">Your Lists</a></li>
+				<li><a href="youraccount.jsp" class="but1_active">Hello, Your account</a></li>
+				<li><a href="WishlistServlet" class="but1_active">Your Lists</a></li>
 				<li><a href="cart.jsp" class="but1_active">Cart</a></li>
 			</ul>
 		</div>
@@ -54,7 +54,7 @@
 					%>
 					</select>
 					<br><input type="button" value="Add To Cart" onclick="javascript:gotoCart(<%=pid %>)" style="width:150px" >
-					<br><input type="submit" value="Add To Lists" onclick="Windows.location.href='cart.jsp?pid=<%=pid%>" style="width:150px" >
+					<br><input type="submit" value="Add To Lists" onclick="window.location.href='WishlistServlet?pid=<%=pid%>" style="width:150px" >
 				</div>	
 				</div>	
 			</div>
