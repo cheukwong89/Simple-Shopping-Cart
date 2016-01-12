@@ -6,20 +6,23 @@
 <html>
 <head>
 <title>Amazon</title>
-<link rel="stylesheet" type="text/css" href="css/style.css">
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 <link href="css/style.css" rel="stylesheet" type="text/css">
+ <script language="javascript" type="text/javascript">
+					function gotoCart(id){
+						window.location.href="wishlist?pid="+id+"&qty="+document.getElementById("productDetail").value;
+					}
+				</script>
 </head>
-
 <body>
 	<div id="header">																																																																								
 		<div id="header_inside">
-			<img src="http://www.dazhuoge.me/wp-content/uploads/2016/01/headerpic.png">
+			<img src="http://www.dazhuoge.me/wp-content/uploads/2016/01/headerpic.png" alt="setalpm" width="999" height="222" border="0" usemap="#Map" /><br />																																										
 			<ul id="menu">
 				<li><a href="Home.jsp" class="but1_active">Home Page</a></li>
-				<li><a href="youraccount.jsp" class="but1_active">Hello, Your account</a></li>
-				<li><a href="WishlistServlet" class="but1_active">Your Lists</a></li>
-				<li><a href="CartServlet" class="but1_active">Cart</a></li>
+				<li><a href="login.jsp" class="but1_active">Hello, Your account</a></li>
+				<li><a href="list.jsp" class="but1_active">Your Lists</a></li>
+				<li><a href="cart.jsp" class="but1_active">Cart</a></li>
 			</ul>
 		</div>
 	</div>
@@ -34,33 +37,28 @@
 					<li><a href="Home.jsp?brand=La%20Isla">La Isla</a></li>
 					<li class="color"><a href="Home.jsp?brand=Glamorise">Glamorise</a></li>
 					<li><a href="Home.jsp?brand=Fruit%20of%20the%20Loom">Fruit of the Loom</a></li>
-					<li class="color"><a href="Home.jsp">All</a></li>
+					<li class="color"><a href="Home.jsp?brand=all">All</a></li>
 				</ul>
 			</div>
 			<div id="main_block">
-
 				<div id="item">
-					<% 
-						String pid=request.getParameter("pid"); 	
-					%>
+					<% String pid=request.getParameter("pid"); %>
 					<d:database pid="<%=pid %>"/> 
-				</div>	
-				<div id="item">
+				<div class="choice">
 					<br>Qty:
-					<select>
+					<select id="productDetail" >
 					<%
 						for (int i=1;i<=30;i++){
 						out.println("<option value="+i+">"+i+"</option>");
 						}	
 					%>
 					</select>
-					<br><input type="submit" value="Add To Cart" onclick="window.location.href='ShoppingcarServlet?pid=<%=pid%>qty'">
-					<br><input type="submit" value="Add To Lists" onclick="window.location.href='WishlistServlet?pid=<%=pid%>'">	
-				</div>
-
+					<br><input type="button" value="Add To Cart" onclick="javascript:gotoCart(<%=pid %>)" style="width:150px" >
+					<br><input type="submit" value="Add To Lists" onclick="Windows.location.href='cart.jsp?pid=<%=pid%>" style="width:150px" >
+				</div>	
+				</div>	
 			</div>
 		</div>
-		
 	</div>
 	<div id="footer">
 		<div id="footer_inside">
