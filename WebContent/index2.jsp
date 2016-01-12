@@ -10,7 +10,7 @@
 <link href="css/style.css" rel="stylesheet" type="text/css">
  <script language="javascript" type="text/javascript">
 					function gotoCart(id){
-						window.location.href="wishlist?pid="+id+"&qty="+document.getElementById("productDetail").value;
+						window.location.href="CartServlet?id="+id+"&action=add&num="+document.getElementById("productDetail").value;
 					}
 				</script>
 </head>
@@ -20,9 +20,13 @@
 			<img src="http://www.dazhuoge.me/wp-content/uploads/2016/01/headerpic.png" alt="setalpm" width="999" height="222" border="0" usemap="#Map" /><br />																																										
 			<ul id="menu">
 				<li><a href="Home.jsp" class="but1_active">Home Page</a></li>
+				<li><a href="youraccount.jsp" class="but1_active">Hello, Your account</a></li>
+				<li><a href="WishlistServlet" class="but1_active">Your Lists</a></li>
+				<li><a href="CartServlet?action=show" class="but1_active">Cart</a></li>
+			<!--  
 				<li><a href="login.jsp" class="but1_active">Hello, Your account</a></li>
 				<li><a href="list.jsp" class="but1_active">Your Lists</a></li>
-				<li><a href="cart.jsp" class="but1_active">Cart</a></li>
+				<li><a href="cart.jsp" class="but1_active">Cart</a></li> -->
 			</ul>
 		</div>
 	</div>
@@ -53,6 +57,11 @@
 						}	
 					%>
 					</select>
+<!--
+					<br><input type="submit" value="Add To Cart" onclick="window.location.href='CartServlet?id=<%=pid%>&action=add&num=1'">
+					<br><input type="submit" value="Add To Lists" onclick="window.location.href='WishlistServlet?pid=<%=pid%>'">	
+				</div> -->
+
 					<br><input type="button" value="Add To Cart" onclick="javascript:gotoCart(<%=pid %>)" style="width:150px" >
 					<br><input type="submit" value="Add To Lists" onclick="Windows.location.href='cart.jsp?pid=<%=pid%>" style="width:150px" >
 				</div>	
@@ -74,7 +83,7 @@
 		</div>
 	</div>
     <map name="Map">
-       <area shape="rect" coords="78,45,312,119" href="index.html">
+       <area shape="rect" coords="78,45 247890-,312,119" href="index.html">
        <area shape="poly" coords="670,87,719,78,727,123,677,130" href="#">
        <area shape="poly" coords="776,124,818,152,793,189,751,160" href="#">
        <area shape="poly" coords="834,52,885,61,878,105,828,96" href="#">

@@ -10,6 +10,7 @@ package com.team2;
 public class Product {
 	private String id;
 	private String name;
+	private String brand;
 	private double price;
 	private int number;
 	
@@ -40,6 +41,14 @@ public class Product {
 		this.name = name;
 	}
 	
+	public String getBrand() {
+		return brand;
+	}
+	
+	public void setBrand(String brand) {
+		this.brand = brand;
+	}
+	
 	public double getPrice() {
 		return price;
 	}
@@ -58,7 +67,8 @@ public class Product {
 	
 	@Override
 	public int hashCode() {
-		return Integer.parseInt(this.getId()) + this.getName().hashCode();
+		//return Integer.parseInt(this.getId()) + this.getName().hashCode();
+		return Integer.parseInt(this.getId());
 	}
 	
 	@Override
@@ -80,6 +90,6 @@ public class Product {
 	}
 	
 	public String toString() {
-		return "Product ID : " + this.id + ", Product Name : " + this.getName() + " ";
+		return "Product ID : " + this.id + " , brand : " + this.brand + ", Product Name : " + this.getName() + " ";
 	}
 }

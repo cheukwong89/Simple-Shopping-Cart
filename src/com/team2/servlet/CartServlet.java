@@ -2,6 +2,9 @@ package com.team2.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.team2.Cart;
+import com.team2.ConnectionManager;
 import com.team2.Product;
 
 /**
@@ -35,6 +39,18 @@ public class CartServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 		doPost(request, response);
+		/*System.out.println(request.getParameter("id"));
+		System.out.println(request.getParameter("action"));
+		System.out.println(request.getParameter("num"));
+		if (request.getParameter("action").equals("add")) {
+			boolean isAdded = addToCart(request, response);
+			if (isAdded) {
+				System.out.println("Added item");
+			} else {
+				System.out.println("Item not added successfully");
+			}
+		}*/
+		
 	}
 
 	/**
@@ -82,9 +98,26 @@ public class CartServlet extends HttpServlet {
 		int number = Integer.parseInt(request.getParameter("num"));
 		Product product = new Product();
 		product.setId(id);
-		product.setNumber(number);
 		
+		ResultSet rs = null;
 		
+		try {
+			Connection conn = ConnectionManager.getMysqlConnection();
+			String sql = "select * from Product where pid = ?;";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setString(1, id);
+			rs = ps.executeQuery();
+			
+			if (rs != null && rs.next()) {
+				product.setName(rs.getString(2));
+				product.setPrice(rs.getDouble(3));
+				product.setBrand(rs.getString(5));
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+						
 		if(request.getSession().getAttribute("cart")==null)
 		{
 			Cart cart = new Cart();
@@ -93,6 +126,7 @@ public class CartServlet extends HttpServlet {
 		Cart cart = (Cart)request.getSession().getAttribute("cart");
 		if(cart.addItemsInCart(product, Integer.parseInt(request.getParameter("num"))))
 		{
+			request.getSession().setAttribute("cart",cart);
 			return true;
 		}
 		else
